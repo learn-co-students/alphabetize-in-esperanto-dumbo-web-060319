@@ -1,6 +1,17 @@
 require "pry"
 
+ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
+
 def alphabetize(arr)
+  arr.sort_by do |str|
+    str.split('').map do |letter|
+      ESPERANTO_ALPHABET.index(letter)
+    end
+  end
+end
+
+
+def alphabetize_x(arr)
   sorted = []
   sorted.push(arr.shift)
   # binding.pry
